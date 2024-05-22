@@ -1,7 +1,7 @@
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/task`;
 
 
-const show = async (task) => {
+const show = async () => {
     try {
         const res = await fetch(BASE_URL)
         const data = await res.json()

@@ -1,4 +1,4 @@
-import { useState, Effect, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import NavBar from './components/NavBar/NavBar.jsx'
 import * as toDoService from './services/toDoService.js'
 import ListsContainer from './components/ListsContainer/ListsContainer.jsx'
