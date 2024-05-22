@@ -1,0 +1,11 @@
+#lists-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 30px;
+    margin: 0 20px;
+    background-color: blue;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
