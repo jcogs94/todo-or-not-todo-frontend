@@ -1,0 +1,7 @@
+.task {
+    margin: 6px 0;
+}
+
+.task > input {
+    margin-right: 10px;
+}
