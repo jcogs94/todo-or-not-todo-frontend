@@ -1,18 +1,16 @@
 import ListCard from './ListCard/ListCard.jsx'
 import './ListsContainer.css'
 
-const ListsContainer = ({taskList}) => {
-    const tasks=taskList.map((task) => <li key={task._id}>{task.name}</li>)
+const ListsContainer = ({AllToDoList}) => {
+    const tasks=AllToDoList.map((task) => <li key={task._id}>{task.name}</li>)
 
     return (
         <>
+       
             <div id="lists-container">
-                <ListCard />
-                <ListCard />
-                <ListCard />
-                <ListCard />
-                <ListCard />
-                <ListCard />
+                {AllToDoList.map((toDoList) => (
+                    <ListCard key={toDoList._id} toDoList={toDoList}/>
+                ))}
             </div>
         </>
     )

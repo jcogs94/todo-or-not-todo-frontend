@@ -1,11 +1,12 @@
 import Task from './Task/Task.jsx'
 import './ListCard.css'
 
-const ListCard = () => {
+const ListCard = ({toDoList}) => {
+    
     return (
         <>
             <div className="list-card">
-                <h3>List Name</h3>
+                <h3>{toDoList.name}</h3>
                 <ul>
                     <Task />
                     <Task />

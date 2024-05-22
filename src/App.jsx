@@ -28,7 +28,7 @@ function App() {
     <>
       <NavBar />
       <h1>Start</h1>
-      <ListsContainer  taskList={toDoList}/>
+      <ListsContainer  AllToDoList={toDoList}/>
     </>
   )
 }
