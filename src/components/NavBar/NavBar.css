@@ -1,0 +1,14 @@
+nav {
+    width: 100vw;
+    padding: 15px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: beige;
+}
+
+nav > a {
+    text-decoration: none;
+    cursor: pointer;
+}
