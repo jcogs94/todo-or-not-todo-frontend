@@ -28,6 +28,29 @@ const showList = async (listId) => {
     }
 }
 
+// Add a List
+const createList = async (newListName) => {
+    // Defines proper URL for the request and the data
+    // to be sent
+    const data = {
+        name: newListName,
+    }
+
+    try {
+        // Found from following url:
+        // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+        await fetch(BASE_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data)
+        })
+    } catch (err) {
+        console.log(err)
+    }
+}
+
 // Adds new task to list
 const createTask = async (listId, newTaskName) => {
     // Defines proper URL for the request and the data
@@ -93,5 +116,5 @@ const deleteTask = async (listId, taskId) => {
 }
 
 export {
-    index, showList, createTask, updateTask, deleteTask
+    index, createList, showList, createTask, updateTask, deleteTask
 };
