@@ -3,10 +3,16 @@
     background-color: beige;
 }
 
-.list-card > h3 {
-    text-align: center;
-    padding: 10px 0;
+.list-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
     border-bottom: 2px solid black;
+}
+
+.list-heading > h3 {
+    text-align: center;
 }
 
 .list-card > ul {
