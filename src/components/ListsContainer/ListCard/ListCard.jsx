@@ -10,7 +10,7 @@ const ListCard = ({toDoList, onClick, deleteList}) => {
     // Updates the list state with current DB data
     // To be called when changes are made to display
     // current data to user
-    const updateList = async () => {
+    const updateListComponent = async () => {
         const updatedList = await showList(list._id)
         setList(updatedList)
     }
@@ -24,7 +24,7 @@ const ListCard = ({toDoList, onClick, deleteList}) => {
     const handleSubmit = async (event) => {
         event.preventDefault()
         await createTask(toDoList._id, newTaskName)
-        await updateList()
+        await updateListComponent()
         setNewTaskName('')
     }
 
@@ -42,7 +42,7 @@ const ListCard = ({toDoList, onClick, deleteList}) => {
                 <ul>
                     { list.tasks.map( (task) => (
                         <Task key={task._id} listId={list._id}
-                            task={task} updateList={updateList} />
+                            task={task} updateListComponent={updateListComponent} />
                     ))}
                 </ul>
             :

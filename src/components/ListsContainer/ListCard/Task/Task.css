@@ -27,3 +27,22 @@
         display: block;
     }
 }
+
+.update-task-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+}
+
+.update-task-buttons > button {
+    color: white;
+    border-radius: 8px;
+}
+
+.update-check-button {
+    background-color: green;
+}
+
+.update-cancel-button {
+    background-color: red;
+}
