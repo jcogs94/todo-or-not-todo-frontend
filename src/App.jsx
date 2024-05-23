@@ -5,7 +5,7 @@ import ListsContainer from './components/ListsContainer/ListsContainer.jsx'
 import './App.css'
 
 function App() {
-  const [toDoList, setToDoList] = useState([]);
+  const [allToDoLists, setAllToDoLists] = useState([]);
 
   useEffect(() => {
     const fetchTasks = async () => {
@@ -14,7 +14,7 @@ function App() {
         if (tasks.error) {
           throw new Error(tasks.error);
         }
-        setToDoList(tasks);
+        setAllToDoLists(tasks);
       } catch (error) {
         console.log(error);
       }
@@ -24,13 +24,11 @@ function App() {
 
 
 
-  return (
-    <>
-      <NavBar />
-      <h1>Start</h1>
-      <ListsContainer  AllToDoList={toDoList}/>
-    </>
-  )
+  return <>
+    <NavBar />
+    <h1>Start</h1>
+    <ListsContainer  allToDoLists={allToDoLists}/>
+  </>
 }
 
 export default App
