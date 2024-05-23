@@ -5,7 +5,7 @@
     padding: 30px;
     margin: 0 20px;
     background-color: blue;
-    align-items: center;
+    align-items: baseline;
     justify-content: center;
     gap: 10px;
 }
