@@ -11,6 +11,8 @@ const Task = ({ listId, task, updateList }) => {
         await updateList(listId)
     }
 
+    // When delete button is pressed, deletes from db
+    // then updates the state of the list
     const deleteHandler = async (taskId) => {
         await deleteTask(listId, taskId)
         await updateList(listId)
