@@ -1,24 +1,22 @@
-import { useState } from 'react'
-import './Task.css'
 import { updateTask } from '../../../../services/toDoService'
+import './Task.css'
 
-const Task = ({ listId, task }) => {
-    const [finishedTask, setFinishedTask] = useState(task.completed)
-
-    const checkHandler = (event) => {
+const Task = ({ listId, task, updateList }) => {
+    const checkHandler = async (event) => {
         let data = {}
         if (event.target.name === 'completed') {
-            data.completed = !finishedTask
+            data.completed = !task.completed
         }
-        updateTask(listId, task._id, data)
+        await updateTask(listId, task._id, data)
+        await updateList(listId)
     }
 
     return <>
         <li className='task'>
-            <input type="checkbox" name='completed' checked={finishedTask}
+            <input type="checkbox" name='completed' checked={task.completed}
                 onChange={checkHandler} />
             <label htmlFor="completed"
-                style={ finishedTask ? {textDecoration: "line-through"} : null }
+                style={ task.completed ? {textDecoration: "line-through"} : null }
                 >{task.name}</label>
         </li>
     </>
