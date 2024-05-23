@@ -2,7 +2,7 @@ const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}`;
 
 
 // returns all lists
-const show = async () => {
+const index = async () => {
     try {
         const res = await fetch(BASE_URL)
         const data = await res.json()
@@ -37,5 +37,5 @@ const createTask = async (listId, newTaskName) => {
 }
 
 export {
-    show, createTask
+    index, createTask
 };

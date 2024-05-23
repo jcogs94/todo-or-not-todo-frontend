@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const tasks = await toDoService.show();
+        const tasks = await toDoService.index();
         if (tasks.error) {
           throw new Error(tasks.error);
         }
