@@ -20,7 +20,7 @@ const ListCard = ({toDoList, onClick}) => {
 
     return <>
         <div className="list-card">
-            <h3>{toDoList.name}</h3>
+            <h3 onClick={onClick}>{toDoList.name}</h3>
             { toDoList.tasks.length ?
                 <ul>
                     { toDoList.tasks.map( (task) => (
