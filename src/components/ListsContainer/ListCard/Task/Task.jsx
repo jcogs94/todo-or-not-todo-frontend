@@ -64,8 +64,8 @@ const Task = ({ listId, task, updateListComponent }) => {
             </div>
             { editTask ?
                     <div className='update-task-buttons'>
-                        <button onClick={updateTaskHandler}>✓</button>
-                        <button onClick={updateTaskHandler}>X</button>
+                        <button className='update-check-button' onClick={updateTaskHandler}>✓</button>
+                        <button className='update-cancel-button' onClick={updateTaskHandler}>X</button>
                     </div>
                 :
                     <div className="delete-button">
