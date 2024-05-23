@@ -6,7 +6,7 @@ const ListsContainer = ({AllToDoList}) => {
 
     return (
         <>
-       
+
             <div id="lists-container">
                 {AllToDoList.map((toDoList) => (
                     <ListCard key={toDoList._id} toDoList={toDoList}/>
