@@ -1,7 +1,17 @@
 .task {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
     margin: 6px 0;
 }
 
-.task > input {
+.task > div > input {
     margin-right: 10px;
+}
+
+.task > button {
+    cursor: pointer;
 }

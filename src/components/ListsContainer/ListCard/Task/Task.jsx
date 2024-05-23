@@ -11,13 +11,22 @@ const Task = ({ listId, task, updateList }) => {
         await updateList(listId)
     }
 
+    const deleteHandler = async (taskId) => {
+        console.log('clicked...')
+        console.log('listId:', listId)
+        console.log('taskId:', taskId)
+    }
+
     return <>
         <li className='task'>
-            <input type="checkbox" name='completed' checked={task.completed}
-                onChange={checkHandler} />
-            <label htmlFor="completed"
+            <div>
+                <input type="checkbox" name='completed' checked={task.completed}
+                    onChange={checkHandler} />
+                <label htmlFor="completed"
                 style={ task.completed ? {textDecoration: "line-through"} : null }
                 >{task.name}</label>
+            </div>
+            <button onClick={() => deleteHandler(task._id)}>X</button>
         </li>
     </>
 }
