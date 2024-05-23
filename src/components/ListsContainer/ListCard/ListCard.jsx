@@ -1,7 +1,7 @@
 import Task from './Task/Task.jsx'
 import './ListCard.css'
 
-const ListCard = ({toDoList}) => {
+const ListCard = ({toDoList, onClick}) => {
     return <>
         <div className="list-card" onClick={onClick}>
             <h3>{toDoList.name}</h3>
