@@ -1,11 +1,17 @@
 import Task from './Task/Task.jsx'
 import './ListCard.css'
 import { useState } from 'react'
-import { createTask } from '../../../services/toDoService.js'
+import { createTask, showList } from '../../../services/toDoService.js'
 
 const ListCard = ({toDoList, onClick}) => {
+    const [list, setList] = useState(toDoList)
     const [newTaskName, setNewTaskName] = useState('')
     
+    const updateList = async () => {
+        const updatedList = await showList(list._id)
+        setList(updatedList)
+    }
+
     // Updates input field with current newTaskName state
     const handleNewTaskInput = (event) => {
         setNewTaskName(event.target.value)
@@ -15,16 +21,18 @@ const ListCard = ({toDoList, onClick}) => {
     const handleSubmit = async (event) => {
         event.preventDefault()
         await createTask(toDoList._id, newTaskName)
+        await updateList()
         setNewTaskName('')
     }
 
     return <>
         <div className="list-card">
-            <h3 onClick={onClick}>{toDoList.name}</h3>
-            { toDoList.tasks.length ?
+            <h3 onClick={onClick}>{list.name}</h3>
+            { list.tasks.length ?
                 <ul>
-                    { toDoList.tasks.map( (task) => (
-                        <Task key={task._id} listId={toDoList._id} task={task} />
+                    { list.tasks.map( (task) => (
+                        <Task key={task._id} listId={list._id}
+                            task={task} updateList={updateList} />
                     ))}
                 </ul>
             :

@@ -13,6 +13,21 @@ const index = async () => {
     }
 };
 
+// "Show info" for list
+const showList = async (listId) => {
+    // Defines proper URL for the request and the data
+    // to be sent
+    const REQ_URL = BASE_URL + '/' + listId
+
+    try {
+        const res = await fetch(REQ_URL)
+        const data = await res.json()
+        return data
+    } catch (err) {
+        console.log(err)
+    }
+}
+
 // Adds new task to list
 const createTask = async (listId, newTaskName) => {
     // Defines proper URL for the request and the data
@@ -59,5 +74,5 @@ const updateTask = async (listId, taskId, data) => {
 }
 
 export {
-    index, createTask, updateTask
+    index, showList, createTask, updateTask
 };
