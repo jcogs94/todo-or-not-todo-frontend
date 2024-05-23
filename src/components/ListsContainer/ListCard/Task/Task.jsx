@@ -7,7 +7,6 @@ const Task = ({ listId, task }) => {
 
     const checkHandler = (event) => {
         let data = {}
-        // console.log(event.target.name);
         if (event.target.name === 'completed') {
             data.completed = !finishedTask
         }
