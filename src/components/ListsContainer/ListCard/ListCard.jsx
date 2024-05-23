@@ -3,8 +3,8 @@ import './ListCard.css'
 
 const ListCard = ({toDoList, onClick}) => {
     return <>
-        <div className="list-card" onClick={onClick}>
-            <h3>{toDoList.name}</h3>
+        <div className="list-card">
+            <h3 onClick={onClick}>{toDoList.name}</h3>
             { toDoList.tasks.length ?
                 <ul>
                     { toDoList.tasks.map( (task) => (
