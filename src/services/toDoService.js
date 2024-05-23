@@ -24,6 +24,8 @@ const createTask = async (listId, newTaskName) => {
     }
 
     try {
+        // Found from following url:
+        // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
         await fetch(REQ_URL, {
             method: "POST",
             headers: {
