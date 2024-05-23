@@ -24,7 +24,7 @@ const ListCard = ({toDoList, onClick}) => {
             { toDoList.tasks.length ?
                 <ul>
                     { toDoList.tasks.map( (task) => (
-                        <Task key={task._id} {...task} />
+                        <Task key={task._id} listId={toDoList._id} task={task} />
                     ))}
                 </ul>
             :

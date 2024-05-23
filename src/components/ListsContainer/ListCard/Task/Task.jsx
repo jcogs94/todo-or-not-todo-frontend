@@ -1,11 +1,16 @@
 import { useState } from 'react'
 import './Task.css'
+import { updateTask } from '../../../../services/toDoService'
 
-const Task = ({ completed, name }) => {
-    const [finishedTask, setFinishedTask] = useState(completed)
+const Task = ({ listId, task }) => {
+    const [finishedTask, setFinishedTask] = useState(task.completed)
 
-    const checkHandler = () => {
-        console.log('check changed...')
+    const checkHandler = (event) => {
+        let data = {}
+        if (event.target.name === 'completed') {
+            data.completed = !finishedTask
+        }
+        updateTask(listId, task._id, data)
     }
 
     return <>
@@ -14,7 +19,7 @@ const Task = ({ completed, name }) => {
                 onChange={checkHandler} />
             <label htmlFor="completed"
                 style={ finishedTask ? {textDecoration: "line-through"} : null }
-                >{name}</label>
+                >{task.name}</label>
         </li>
     </>
 }
