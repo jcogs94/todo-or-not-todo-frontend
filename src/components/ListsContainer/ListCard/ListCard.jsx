@@ -37,7 +37,8 @@ const ListCard = ({toDoList, onClick, deleteList}) => {
 
     return <>
         <div className="list-card">
-            <h3 onClick={onClick}>{list.name}<button className='list-delete' onClick={() => deleteHandler(list._id)}>X</button></h3>
+            <h3 onClick={onClick}>{list.name}</h3>
+            <button className='list-delete' onClick={() => deleteHandler(list._id)}>X</button>
             { list.tasks.length ?
                 <ul>
                     { list.tasks.map( (task) => (
