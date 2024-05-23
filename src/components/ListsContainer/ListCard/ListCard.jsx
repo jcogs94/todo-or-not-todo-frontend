@@ -3,7 +3,7 @@ import './ListCard.css'
 
 const ListCard = ({toDoList}) => {
     return <>
-        <div className="list-card">
+        <div className="list-card" onClick={onClick}>
             <h3>{toDoList.name}</h3>
             { toDoList.tasks.length ?
                 <ul>

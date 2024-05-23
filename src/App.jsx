@@ -6,6 +6,7 @@ import './App.css'
 
 function App() {
   const [allToDoLists, setAllToDoLists] = useState([]);
+  const [selectedList, setSelectedList] = useState(null)
 
   useEffect(() => {
     const fetchTasks = async () => {
@@ -22,12 +23,16 @@ function App() {
     fetchTasks();
   }, []);
 
+  const updateSelectedList = (toDo) => {
+    setSelectedList(toDo)
+  }
+
 
 
   return <>
     <NavBar />
     <h1>Start</h1>
-    <ListsContainer  allToDoLists={allToDoLists}/>
+    <ListsContainer allToDoLists={allToDoLists} updateSelectedList={updateSelectedList} />
   </>
 }
 
