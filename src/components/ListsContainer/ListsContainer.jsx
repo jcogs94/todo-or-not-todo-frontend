@@ -3,7 +3,7 @@ import { createList } from '../../services/toDoService.js'
 import './ListsContainer.css'
 import { useState } from 'react'
 
-const ListsContainer = ({ allToDoLists, addNewList }) => {
+const ListsContainer = ({ allToDoLists, addNewList, deleteList }) => {
 const [newListName, setNewListName] = useState('');
 
     const handleListCardClick = (toDoList) => { console.log('ListCard Clicked:', toDoList); }
@@ -32,7 +32,7 @@ const handleSubmit = async (event) => {
                     <ListCard
                         key={toDoList._id}
                         toDoList={toDoList}
-                        onClick={() => handleListCardClick(toDoList)} />
+                        onClick={() => handleListCardClick(toDoList)} deleteList={deleteList} />
                 ))}
                 <form className='add-list' onSubmit={handleSubmit}>
                 <input type="text" required placeholder='Create New List'

@@ -98,6 +98,27 @@ const updateTask = async (listId, taskId, data) => {
     }
 }
 
+// Delete list
+const deleteList = async (listId) => {
+    // Defines proper URL for the request
+    const REQ_URL = BASE_URL + '/' + listId
+
+    try {
+        // Found from following url:
+        // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+        const res = await fetch(REQ_URL, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        })
+        const deletedList = await res.json();
+        return deletedList;
+    } catch (err) {
+        console.log(err)
+    }
+}
+
 // Delete task on list
 const deleteTask = async (listId, taskId) => {
     // Defines proper URL for the request
@@ -118,5 +139,5 @@ const deleteTask = async (listId, taskId) => {
 }
 
 export {
-    index, showList, createList, createTask, updateTask, deleteTask
+    index, showList, createList, createTask, updateTask, deleteTask, deleteList
 };

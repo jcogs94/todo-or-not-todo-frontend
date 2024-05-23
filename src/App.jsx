@@ -27,14 +27,16 @@ function App() {
     setAllToDoLists(prevLists => [...prevLists, newList])
   }
 
-
+  const deleteList = (listId) => {
+    setAllToDoLists(prevLists => prevLists.filter(list => list._id !== listId));
+  }
 
 
 
   return <>
     <NavBar />
     <h1>Start</h1>
-    <ListsContainer allToDoLists={allToDoLists} addNewList={addNewList} />
+    <ListsContainer allToDoLists={allToDoLists} addNewList={addNewList} deleteList={deleteList} />
   </>
 }
 

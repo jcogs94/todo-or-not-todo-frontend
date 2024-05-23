@@ -35,3 +35,19 @@
 .add-task > button {
     width: 23px;
 }
+
+.list-delete {
+    width: 25px;
+    height: 21px;
+}
+
+.list-delete > button {
+    cursor: pointer;
+    display: none;
+}
+
+.list-delete:hover {
+    > button {
+        display: block;
+    }
+}
