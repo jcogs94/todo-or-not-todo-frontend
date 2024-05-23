@@ -1,4 +1,4 @@
-import { updateTask } from '../../../../services/toDoService'
+import { deleteTask, updateTask } from '../../../../services/toDoService'
 import './Task.css'
 
 const Task = ({ listId, task, updateList }) => {
@@ -12,9 +12,8 @@ const Task = ({ listId, task, updateList }) => {
     }
 
     const deleteHandler = async (taskId) => {
-        console.log('clicked...')
-        console.log('listId:', listId)
-        console.log('taskId:', taskId)
+        await deleteTask(listId, taskId)
+        await updateList(listId)
     }
 
     return <>
