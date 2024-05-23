@@ -25,7 +25,9 @@ const Task = ({ listId, task, updateList }) => {
                 style={ task.completed ? {textDecoration: "line-through"} : null }
                 >{task.name}</label>
             </div>
-            <button onClick={() => deleteHandler(task._id)}>X</button>
+            <div className="delete-button">
+                <button onClick={() => deleteHandler(task._id)}>X</button>
+            </div>
         </li>
     </>
 }

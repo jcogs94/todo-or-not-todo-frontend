@@ -12,6 +12,18 @@
     margin-right: 10px;
 }
 
-.task > button {
+.delete-button {
+    width: 25px;
+    height: 21px;
+}
+
+.delete-button > button {
     cursor: pointer;
+    display: none;
+}
+
+.delete-button:hover {
+    > button {
+        display: block;
+    }
 }
