@@ -38,6 +38,26 @@ const createTask = async (listId, newTaskName) => {
     }
 }
 
+// Updates task on list
+const updateTask = async (listId, taskId, data) => {
+    // Defines proper URL for the request
+    const REQ_URL = BASE_URL + '/' + listId + '/tasks/' + taskId
+
+    try {
+        // Found from following url:
+        // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+        await fetch(REQ_URL, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data)
+        })
+    } catch (err) {
+        console.log(err)
+    }
+}
+
 export {
-    index, createTask
+    index, createTask, updateTask
 };
