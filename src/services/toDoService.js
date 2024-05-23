@@ -116,5 +116,5 @@ const deleteTask = async (listId, taskId) => {
 }
 
 export {
-    index, createList, showList, createTask, updateTask, deleteTask
+    index, showList, createList, createTask, updateTask, deleteTask
 };
