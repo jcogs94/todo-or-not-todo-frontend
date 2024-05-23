@@ -1,6 +1,7 @@
 import Task from './Task/Task.jsx'
 import './ListCard.css'
 import { useState } from 'react'
+import { createTask } from '../../../services/toDoService.js'
 
 const ListCard = ({toDoList, onClick}) => {
     const [newTaskName, setNewTaskName] = useState('')
@@ -11,15 +12,14 @@ const ListCard = ({toDoList, onClick}) => {
     }
 
     // Creates a new task and resets the input
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault()
-        console.log(newTaskName, 'added...')
-        // TODO: backend service to add new task with newTaskName
+        await createTask(toDoList._id, newTaskName)
         setNewTaskName('')
     }
 
     return <>
-        <div className="list-card" onClick={onClick}>
+        <div className="list-card">
             <h3>{toDoList.name}</h3>
             { toDoList.tasks.length ?
                 <ul>
