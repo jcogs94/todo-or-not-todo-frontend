@@ -2,7 +2,7 @@ import { deleteTask, updateTask } from '../../../../services/toDoService'
 import './Task.css'
 
 const Task = ({ listId, task, updateList }) => {
-    const checkHandler = async (event) => {
+    const updateTaskHandler = async (event) => {
         let data = {}
         if (event.target.name === 'completed') {
             data.completed = !task.completed
@@ -22,10 +22,10 @@ const Task = ({ listId, task, updateList }) => {
         <li className='task'>
             <div>
                 <input type="checkbox" name='completed' checked={task.completed}
-                    onChange={checkHandler} />
+                    onChange={updateTaskHandler} />
                 <label htmlFor="completed"
-                style={ task.completed ? {textDecoration: "line-through"} : null }
-                >{task.name}</label>
+                    style={ task.completed ? {textDecoration: "line-through"} : null }
+                    >{task.name}</label>
             </div>
             <div className="delete-button">
                 <button onClick={() => deleteHandler(task._id)}>X</button>
