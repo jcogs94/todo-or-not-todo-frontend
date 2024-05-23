@@ -2,7 +2,7 @@ import ListCard from './ListCard/ListCard.jsx'
 import './ListsContainer.css'
 
 const ListsContainer = ({allToDoLists}) => {
-    const tasks=allToDoLists.map((task) => <li key={task._id}>{task.name}</li>)
+    
 
     return (
         <>
