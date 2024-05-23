@@ -7,6 +7,9 @@ const ListCard = ({toDoList, onClick}) => {
     const [list, setList] = useState(toDoList)
     const [newTaskName, setNewTaskName] = useState('')
     
+    // Updates the list state with current DB data
+    // To be called when changes are made to display
+    // current data to user
     const updateList = async () => {
         const updatedList = await showList(list._id)
         setList(updatedList)
