@@ -39,13 +39,15 @@ const createList = async (newListName) => {
     try {
         // Found from following url:
         // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-        await fetch(BASE_URL, {
+        const res = await fetch(BASE_URL, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(data)
         })
+        const createdList = await res.json();
+        return createdList;
     } catch (err) {
         console.log(err)
     }

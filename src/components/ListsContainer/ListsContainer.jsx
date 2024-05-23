@@ -3,7 +3,7 @@ import { createList } from '../../services/toDoService.js'
 import './ListsContainer.css'
 import { useState } from 'react'
 
-const ListsContainer = ({ allToDoLists }) => {
+const ListsContainer = ({ allToDoLists, addNewList }) => {
 const [newListName, setNewListName] = useState('');
 
     const handleListCardClick = (toDoList) => { console.log('ListCard Clicked:', toDoList); }
@@ -16,7 +16,10 @@ const handleNewListInput = (event) => {
 // Creates a new List and resets the input
 const handleSubmit = async (event) => {
     event.preventDefault()
-    await createList(newListName)
+    const newList = await createList(newListName)
+    if (newList) {
+       addNewList(newList); // Update the state in the parent component
+    }
     setNewListName('')
 }
 

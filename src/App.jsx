@@ -23,6 +23,10 @@ function App() {
     fetchTasks();
   }, []);
 
+  const addNewList = (newList) => {
+    setAllToDoLists(prevLists => [...prevLists, newList])
+  }
+
 
 
 
@@ -30,7 +34,7 @@ function App() {
   return <>
     <NavBar />
     <h1>Start</h1>
-    <ListsContainer allToDoLists={allToDoLists} />
+    <ListsContainer allToDoLists={allToDoLists} addNewList={addNewList} />
   </>
 }
 
