@@ -1,6 +1,6 @@
 .list-card {
     width: 300px;
-    background-color: beige;
+    background-color: #344C64;
 }
 
 .list-heading {
@@ -8,11 +8,12 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 10px;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #57A6A1;
 }
 
 .list-heading > h3 {
     text-align: center;
+    color: #57A6A1;
 }
 
 .list-card > ul {
@@ -24,18 +25,30 @@
 .no-tasks {
     text-align: center;
     padding: 20px 0;
+    color: #57A6A1;
 }
 
 .add-task {
     width: 100%;
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    gap: 5px;
-    margin: 15px 10px 10px;
+    justify-content: space-between;
+    padding: 15px 10px 10px;
+}
+
+.add-task > * {
+    background-color: #577B8D;
+    border-radius: 6px;
+    color: #57A6A1;
+}
+
+::placeholder {
+    color: #57A6A1;
 }
 
 .add-task > input {
-    width: calc(100% - 48px);
+    width: calc(100% - 28px);
 }
 
 .add-task > button {
