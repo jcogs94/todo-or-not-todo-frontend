@@ -87,7 +87,7 @@ const ListCard = ({ toDoList, deleteList }) => {
                 }
                 {editList ?
                     <div className='update-list-buttons'>
-                        <button className='update--list-check-button' onClick={updateListHandler}>✓</button>
+                        <button className='update-list-check-button' onClick={updateListHandler}>✓</button>
                         <button className='update-list-cancel-button' onClick={updateListHandler}>X</button>
                     </div>
                     :
