@@ -6,7 +6,7 @@ import { useState } from 'react'
 const ListsContainer = ({ allToDoLists, addNewList, deleteList }) => {
 const [newListName, setNewListName] = useState('');
 
-    const handleListCardClick = (toDoList) => { console.log('ListCard Clicked:', toDoList); }
+    
 
 // Updates input field with current newListName state
 const handleNewListInput = (event) => {
@@ -32,7 +32,7 @@ const handleSubmit = async (event) => {
                     <ListCard
                         key={toDoList._id}
                         toDoList={toDoList}
-                        onClick={() => handleListCardClick(toDoList)} deleteList={deleteList} />
+                        deleteList={deleteList} />
                 ))}
                 <div className='add-list-container'>
                     <form className='add-list' onSubmit={handleSubmit}>
