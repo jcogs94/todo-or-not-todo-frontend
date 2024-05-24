@@ -46,3 +46,7 @@
 .update-cancel-button {
     background-color: red;
 }
+
+.task > div > label {
+    color: #57A6A1;
+}

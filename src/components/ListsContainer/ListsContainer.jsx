@@ -34,11 +34,13 @@ const handleSubmit = async (event) => {
                         toDoList={toDoList}
                         onClick={() => handleListCardClick(toDoList)} deleteList={deleteList} />
                 ))}
-                <form className='add-list' onSubmit={handleSubmit}>
-                <input type="text" required placeholder='Create New List'
-                    value={newListName} onChange={handleNewListInput} />
-                <button type="submit">+</button>
-            </form>
+                <div className='add-list-container'>
+                    <form className='add-list' onSubmit={handleSubmit}>
+                        <input type="text" required placeholder='Create New List'
+                            value={newListName} onChange={handleNewListInput} />
+                        <button type="submit">+</button>
+                    </form>
+                </div>
             </div>
         </>
     )

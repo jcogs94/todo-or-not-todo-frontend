@@ -9,7 +9,15 @@
     align-items: center;
     justify-items: flex-start;
     gap: 40px;
-    background-color: cadetblue;
+    background-color: #240750;
     min-width: 100vw;
     min-height: 100vh;
+}
+
+#root > h1 {
+    color: #57A6A1;
+}
+
+input[type='checkbox'] {
+    background-color: #57A6A1;
 }
