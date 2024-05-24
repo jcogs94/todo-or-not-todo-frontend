@@ -1,5 +1,4 @@
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}`;
-// const BASE_URL = 'http://54.196.232.39:3000/todo-lists'
 
 
 // returns all lists
