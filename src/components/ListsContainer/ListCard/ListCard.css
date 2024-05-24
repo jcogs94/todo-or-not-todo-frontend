@@ -1,6 +1,6 @@
 .list-card {
     width: 300px;
-    background-color: #344C64;
+    background-color: #FBF3D5;
 }
 
 .list-heading {
@@ -38,7 +38,7 @@
 }
 
 .add-task > * {
-    background-color: #577B8D;
+    /* background-color: #577B8D; */
     border-radius: 6px;
     color: #57A6A1;
 }
