@@ -1,4 +1,5 @@
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}`;
+// const BASE_URL = 'http://54.196.232.39:3000/todo-lists'
 
 
 // returns all lists
@@ -99,7 +100,7 @@ const updateTask = async (listId, taskId, data) => {
 }
 
 // Delete list
-const deleteList = async (listId) => {
+const deleteListFromDB = async (listId) => {
     // Defines proper URL for the request
     const REQ_URL = BASE_URL + '/' + listId
 
@@ -123,6 +124,7 @@ const deleteList = async (listId) => {
 const deleteTask = async (listId, taskId) => {
     // Defines proper URL for the request
     const REQ_URL = BASE_URL + '/' + listId + '/tasks/' + taskId
+    console.log('deleteTask ran...');
 
     try {
         // Found from following url:
@@ -138,6 +140,8 @@ const deleteTask = async (listId, taskId) => {
     }
 }
 
+// deleteList('6650920e589b1c1724fc9540')
+
 export {
-    index, showList, createList, createTask, updateTask, deleteTask, deleteList
+    index, showList, createList, createTask, updateTask, deleteTask, deleteListFromDB
 };
