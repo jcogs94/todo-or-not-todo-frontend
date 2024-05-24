@@ -14,6 +14,7 @@
 .list-heading > h3 {
     text-align: center;
     color: #57A6A1;
+    cursor: pointer;
 }
 
 .list-card > ul {
@@ -26,6 +27,7 @@
     text-align: center;
     padding: 20px 0;
     color: #57A6A1;
+    cursor: default;
 }
 
 .add-task {
@@ -35,6 +37,10 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 15px 10px 10px;
+
+    > button {
+        cursor: pointer;
+    }
 }
 
 .add-task > * {
@@ -63,6 +69,9 @@
 .list-delete > button {
     cursor: pointer;
     display: none;
+    color: white;
+    background-color: red;
+    border-radius: 8px;
 }
 
 .list-delete:hover {

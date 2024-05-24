@@ -49,11 +49,12 @@ const Task = ({ listId, task, updateListComponent }) => {
 
     return <>
         <li className='task'>
-            <div>
+            <div className='task-input'>
                 <input type="checkbox" name='completed' checked={task.completed}
                     onChange={updateTaskHandler} />
                 { editTask ?
                         <input value={updatedTaskName} onChange={nameInputHandler}
+                            className='edit-task-input'
                             placeholder='Enter a task name' ></input>
                     :
                         <label htmlFor="completed"
