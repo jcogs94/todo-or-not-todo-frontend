@@ -99,7 +99,7 @@ const updateTask = async (listId, taskId, data) => {
 }
 
 // Delete list
-const deleteList = async (listId) => {
+const deleteListFromBD = async (listId) => {
     // Defines proper URL for the request
     const REQ_URL = BASE_URL + '/' + listId
 
@@ -141,5 +141,5 @@ const deleteTask = async (listId, taskId) => {
 }
 
 export {
-    index, showList, createList, createTask, updateTask, deleteTask, deleteList
+    index, showList, createList, createTask, updateTask, deleteTask, deleteListFromBD
 };
