@@ -1,7 +1,7 @@
 import Task from './Task/Task.jsx'
 import './ListCard.css'
 import { useState } from 'react'
-import { createTask, showList, deleteList } from '../../../services/toDoService.js'
+import { createTask, showList, deleteListFromBD } from '../../../services/toDoService.js'
 
 const ListCard = ({toDoList, onClick, deleteList}) => {
     const [list, setList] = useState(toDoList)
@@ -32,7 +32,8 @@ const ListCard = ({toDoList, onClick, deleteList}) => {
     // When delete button is pressed, deletes from db
     // then updates the state of the reamining list
     const deleteHandler = async () => {
-        await deleteList(list._id)
+        await deleteListFromBD(list._id)
+        deleteList(list._id)
     }
     
     return <>
