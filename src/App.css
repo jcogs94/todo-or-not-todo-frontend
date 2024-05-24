@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
+    font-family: Comfortaa, sans-serif;
+    background-image: url(https://unsplash.com/photos/a-white-table-topped-with-lots-of-colorful-confetti-p7iaoHjWDbI);
 }
 
 #root {

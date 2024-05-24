@@ -34,8 +34,8 @@ function App() {
 
 
   return <>
-    <NavBar />
-    <h1>Start</h1>
+    {/* <NavBar /> */}
+    <h1>ToDo or Not ToDo</h1>
     <ListsContainer allToDoLists={allToDoLists} addNewList={addNewList} deleteList={deleteList} />
   </>
 }
