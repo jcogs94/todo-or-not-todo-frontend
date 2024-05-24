@@ -140,8 +140,6 @@ const deleteTask = async (listId, taskId) => {
     }
 }
 
-// deleteList('6650920e589b1c1724fc9540')
-
 export {
     index, showList, createList, createTask, updateTask, deleteTask, deleteListFromDB
 };
