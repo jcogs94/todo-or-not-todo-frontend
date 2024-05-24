@@ -20,6 +20,7 @@
 
 #root > h1 {
     color: #57A6A1;
+    padding: 40px 0 0;
 }
 
 input[type='checkbox'] {
