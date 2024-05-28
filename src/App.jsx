@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react'
 import NavBar from './components/NavBar/NavBar.jsx'
 import * as toDoService from './services/toDoService.js'
 import ListsContainer from './components/ListsContainer/ListsContainer.jsx'
+import CalendarLists from './components/CalendarLists/CalendarLists.jsx'
 import './App.css'
+
 
 function App() {
   const [allToDoLists, setAllToDoLists] = useState([]);
@@ -32,10 +34,10 @@ function App() {
   }
 
 
-
   return <>
     {/* <NavBar /> */}
     <h1>ToDo or Not ToDo</h1>
+    <CalendarLists />
     <ListsContainer allToDoLists={allToDoLists} addNewList={addNewList} deleteList={deleteList} />
   </>
 }
