@@ -1,4 +1,5 @@
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}`;
+console.log(BASE_URL);
 
 
 // returns all lists
