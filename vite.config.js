@@ -4,5 +4,9 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/todo-or-not-todo-frontend/"
+  base: "/todo-or-not-todo-frontend/",
+  server: {
+    host: true,
+    port: 3000
+  }
 })
