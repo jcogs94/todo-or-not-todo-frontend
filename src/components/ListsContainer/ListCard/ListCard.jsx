@@ -42,7 +42,6 @@ const ListCard = ({ toDoList, deleteList }) => {
         setNewTaskName('')
     }
 
-
     // When delete button is pressed, deletes from db
     // then updates the state of the reamining list
     const deleteHandler = async () => {
@@ -70,8 +69,6 @@ const ListCard = ({ toDoList, deleteList }) => {
         await updateList(list._id, data)
         await updateListComponent(list._id)
     }
-
-
 
 
     return <>
