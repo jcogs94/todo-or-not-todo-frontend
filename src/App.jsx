@@ -37,7 +37,7 @@ function App() {
   return <>
     {/* <NavBar /> */}
     <h1>ToDo or Not ToDo</h1>
-    <CalendarLists />
+    <CalendarLists deleteList={deleteList} />
     <ListsContainer allToDoLists={allToDoLists} addNewList={addNewList} deleteList={deleteList} />
   </>
 }
