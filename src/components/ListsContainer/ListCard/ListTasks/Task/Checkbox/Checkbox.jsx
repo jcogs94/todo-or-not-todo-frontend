@@ -1,6 +1,5 @@
 import { useState } from "react"
 import * as taskService from '../../../../../../services/taskService.js'
-import './Checkbox.css'
 
 const Checkbox = ({ listId, task, updateList }) => {
     const [isChecked, setIsChecked] = useState(task.completed)
