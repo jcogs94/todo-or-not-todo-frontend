@@ -2,62 +2,15 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
     gap: 10px;
     margin: 6px 0;
-}
-
-.delete-button {
-    width: 25px;
-    height: 21px;
-}
-
-.delete-button > button {
-    cursor: pointer;
-    display: none;
-}
-
-.delete-button:hover {
-    > button {
-        display: block;
-    }
-}
-
-.update-task-buttons {
-    display: flex;
-    flex-direction: row;
-    gap: 2px;
-}
-
-.update-task-buttons > button, .delete-button > button {
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.update-check-button {
-    background-color: green;
-}
-
-.update-cancel-button, .delete-button > button {
-    background-color: red;
-}
-
-.task > div > label {
-    color: #57A6A1;
-    cursor: pointer;
 }
 
 .task-input {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     gap: 10px;
-    width: calc(100% );
-}
-
-.edit-task-input {
     width: 100%;
-    color: #57A6A1;
-    border-radius: 6px;
 }

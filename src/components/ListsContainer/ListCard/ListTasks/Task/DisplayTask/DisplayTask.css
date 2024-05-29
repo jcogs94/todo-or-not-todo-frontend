@@ -1,0 +1,20 @@
+.task-name {
+    color: #57A6A1;
+    cursor: pointer;
+}
+
+.delete-button {
+    width: 25px;
+    height: 21px;
+}
+
+.delete-button > button {
+    cursor: pointer;
+    display: none;
+}
+
+.delete-button:hover {
+    > button {
+        display: block;
+    }
+}

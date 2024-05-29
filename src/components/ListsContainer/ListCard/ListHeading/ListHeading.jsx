@@ -28,7 +28,7 @@ const ListHeading = ({ list, updateList, removeList }) => {
     // list with new name if '✓' clicked
     const handleUpdateList = async (event) => {
         // If '✓' button is calling this function (has been clicked) AND
-        // its length has value, updates list name with nameInput value
+        // listNameInput.length has value, updates list name with nameInput value
         if (event.target.innerHTML === '✓' && listNameInput.length) {
             // data has name value of listNameInput
             let data = { name: listNameInput }

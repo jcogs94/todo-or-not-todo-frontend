@@ -1,0 +1,25 @@
+.update-task-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+}
+
+.update-task-buttons > button, .delete-button > button {
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.update-check-button {
+    background-color: green;
+}
+
+.update-cancel-button, .delete-button > button {
+    background-color: red;
+}
+
+.edit-task-input {
+    width: 100%;
+    color: #57A6A1;
+    border-radius: 6px;
+}
