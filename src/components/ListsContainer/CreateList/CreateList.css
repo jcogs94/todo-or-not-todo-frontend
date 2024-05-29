@@ -1,0 +1,29 @@
+.add-list-container {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 148px;
+}
+
+.add-list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 12px 10px;
+    
+    > * {
+        color: #57A6A1;
+        border-radius: 6px;
+    }
+
+    > input {
+        width: calc(100% - 29px);
+    }
+
+    > button {
+        cursor: pointer;
+    }
+}

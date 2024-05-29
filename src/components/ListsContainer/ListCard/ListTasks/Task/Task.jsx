@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { deleteTask, updateTask } from '../../../../services/toDoService'
+import * as taskService from '../../../../../services/taskService.js'
 import './Task.css'
 
-const Task = ({ listId, task, updateListComponent }) => {
+const Task = ({ listId, task, updateList }) => {
     const [editTask, setEditTask] = useState(false)
     const [updatedTaskName, setUpdatedTaskName] = useState(task.name)
     
@@ -25,15 +25,15 @@ const Task = ({ listId, task, updateListComponent }) => {
         }
         
         // Updates task and displayed list component
-        await updateTask(listId, task._id, data)
-        await updateListComponent(listId)
+        await taskService.update(listId, task._id, data)
+        await updateList(listId)
     }
 
     // When delete button is pressed, deletes from db
     // then updates the state of the list
     const deleteHandler = async () => {
-        await deleteTask(listId, task._id)
-        await updateListComponent(listId)
+        await taskService.deleteTask(listId, task._id)
+        await updateList(listId)
     }
 
     // Changes task name to input field for editing
@@ -52,27 +52,25 @@ const Task = ({ listId, task, updateListComponent }) => {
             <div className='task-input'>
                 <input type="checkbox" name='completed' checked={task.completed}
                     onChange={updateTaskHandler} />
-                { editTask ?
+                { editTask ? <>
                         <input value={updatedTaskName} onChange={nameInputHandler}
                             className='edit-task-input'
                             placeholder='Enter a task name' ></input>
-                    :
+                        <div className='update-task-buttons'>
+                            <button className='update-check-button' onClick={updateTaskHandler}>✓</button>
+                            <button className='update-cancel-button' onClick={updateTaskHandler}>X</button>
+                        </div>
+                    </> : <>
                         <label htmlFor="completed"
                             style={ task.completed ? {textDecoration: "line-through"} : null }
                             onClick={clickTaskNameHandler}
                             >{task.name}</label>
+                        <div className="delete-button">
+                            <button onClick={() => deleteHandler(task._id)}>X</button>
+                        </div>
+                    </>
                 }
             </div>
-            { editTask ?
-                    <div className='update-task-buttons'>
-                        <button className='update-check-button' onClick={updateTaskHandler}>✓</button>
-                        <button className='update-cancel-button' onClick={updateTaskHandler}>X</button>
-                    </div>
-                :
-                    <div className="delete-button">
-                        <button onClick={() => deleteHandler(task._id)}>X</button>
-                    </div>
-            }
         </li>
     </>
 }

@@ -1,0 +1,58 @@
+.list-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 2px solid #57A6A1;
+
+    > h3 {
+        text-align: center;
+        color: #57A6A1;
+        cursor: pointer;
+    }
+}
+
+.list-delete {
+    width: 25px;
+    height: 21px;
+
+    > button {
+        cursor: pointer;
+        display: none;
+        color: white;
+        background-color: red;
+        border-radius: 8px;
+    }
+}
+
+.list-delete:hover {
+    > button {
+        display: block;
+    }
+}
+
+.edit-list-input {
+    border-radius: 6px;
+    color: #57A6A1;
+}
+
+.update-list-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    
+    > button {
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+}
+
+.update-list-check-button {
+    background-color: green;
+    height: 21px;
+}
+
+.update-list-cancel-button {
+    background-color: red;
+}
